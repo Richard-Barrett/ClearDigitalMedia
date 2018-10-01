@@ -1,0 +1,96 @@
+ Hello Chip,
+>
+> As per our phone discussion, I am sending you a small guide, more like
+> basic guidelines, on how to setup a VNC server and make it pass through a
+> SSH tunnel.
+>
+> As mentioned, I used x11vnc for my test.
+>
+>
+> *Installing the VNC server*
+> Pretty straightforward step. Just be sure first to update your package
+> manager index first.
+>
+> sudo apt update
+> sudo apt install x11vnc
+>
+>
+> *Configuring the VNC server*
+> Once the package is installed, you may want to setup a password for
+> security purposes. To do that, enter:
+>
+> x11vnc -storepasswd /PATH/TO/THE/PASSWORD/FILE
+>
+> It can be in /etc/x11vnc.passwd, /home/bsp/password_for_vnc, etc. wherever
+> it makes sense to you. But just to be sure that the bsp user has
+> read-access to the file whatever its location, simply enter the following
+> command:
+>
+> chmod a+r /PATH/TO/THE/PASSWORD/FILE, where a+r means (add read privilege
+> to all)
+>
+> *Launching a VNC server instance*
+>
+> Then, in order to luanch an instance of the VNC server, enter the
+> following command:
+>
+> x11vnc -auth guest -forever -loop -noxdamage -repeat -display :0 -rfbauth
+> /PATH/TO/THE/PASSWORD/FILE -rfbport 5900 -shared, where "display :0" is
+> actually the display number used by default by the Ubuntu player.
+>
+> You might need to tweak this command. It worked for me, but I can't
+> guarantee it will work for you. You can of course change the port if some
+> other application is using port 5900.
+>
+> *Creating a SSH tunnel*
+>
+> Once that is setup, you can access the player securely via SSH by binding
+> the port 5900 of the dedicated player to a port of your local computer with
+> the following command:
+>
+> ssh -L 5900:127.0.0.1:5900 -N -l USERNAME IP_ADDRESS
+>
+> I am using OpenSSH on Cygwin for this. It is possible to configure PuTTy
+> in a similar fashion using the interface, but I made no test.
+>
+> Where:
+>
+>    - The first instance of 5900 is your local computer port,
+>    - The second instance is the port of the VNC server on the player,
+>    - USERNAME is the username possessing sudo privilege (it can be root,
+>    bsp or some other user),
+>    - IP_ADDRESS is the IP address of your player.
+>
+> If you are connecting to a player that has no direct access to the
+> Internet (such as being in a local network), please make sure that you can
+> access by allowing a port redirection from the router to the player itself
+> or by connecting via a VPN.
+>
+> *Using a VNC client*
+>
+> Once the connection is established, use a VNC client on your local
+> computer and login to 127.0.0.1:5900.
+>
+> *Running x11vnc at startup*
+>
+> If you want for x11vnc server to start up at every reboot, enter the
+> following command on your player:
+>
+> sudo crontab -u bsp -e
+>
+> It will ask you to choose which text editor you want and then you will be
+> able to modify the cron jobs file. In it, simply enter:
+>
+> @reboot x11vnc -auth guest -forever -loop -noxdamage -repeat -display :0
+> -rfbauth /PATH/TO/THE/PASSWORD/FILE -rfbport 5900 -shared, basically the
+> same command as before, but with @reboot.
+>
+> *As a note, I said on the phone to add the cronjob for the root user, but
+> it is in fact for the bsp user.*
+>
+> I hope this will help you. If you have problems, don't hesitate to contact
+> me again.
+>
+> Have an excellent weekend.
+>
+> Vincent Leclerc 
