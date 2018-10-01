@@ -37,7 +37,7 @@ sudo apt-get -f install compizconfig-settings-manager compiz-plugins-extra -y
 sudo apt-get -f install synaptic -y
   sudo add-apt-repository ppa:appgrid/stable -y
   sudo apt-get update -y
-sudo apt-get -f install appgrid
+sudo apt-get -f install appgrid -y
 
 
 # Script will make directories
@@ -60,7 +60,7 @@ sudo sh -c 'echo "deb http://linux.teamviewer.com/deb stable main" >> /etc/apt/s
 sudo sh -c 'echo "deb http://linux.teamviewer.com/deb preview main" >> /etc/apt/sources.list.d/teamviewer.list'
 
 sudo apt update
-sudo apt install teamviewer
+sudo apt install teamviewer -y
 
 teamviewer
 cd
