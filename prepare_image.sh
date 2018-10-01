@@ -7,7 +7,15 @@
 # ==========================
 # https://websiteforstudents.com/installing-teamviewer-on-ubuntu-16-04-17-10-18-04/
 # https://www.howtoforge.com/tutorial/how-to-install-and-use-iostat-on-ubuntu-1604/
-# 
+# http://www.codebind.com/linux-tutorials/install-curl-ubuntu-16-04/
+# https://askubuntu.com/questions/833863/how-to-install-animation-addon-plugin-of-compiz-in-ubuntu-16-04
+
+
+# Tweaking Documentation
+# ======================
+# https://www.makeuseof.com/tag/11-must-apps-ubuntu-right-fresh-install/
+# https://askubuntu.com/questions/131979/how-to-install-synaptic-package-manager
+# https://www.tecmint.com/things-you-mostly-need-to-do-after-installing-ubuntu-16-04/4/
 
 # Script will install required packages
 # ======================================
@@ -19,6 +27,12 @@ sudo apt-get -f install traceroute -y
 sudo apt-get -f install sysstat -y
 sudo apt-get -f install wget -y
 sudo apt-get -f install vim -y
+sudo apt-get -f install compizconfig-settings-manager compiz-plugins-extra -y
+sudo apt-get -f install synaptic -y
+  sudo add-apt-repository ppa:appgrid/stable -y
+  sudo apt-get update -y
+sudo apt-get -f install appgrid
+
 
 # Script will make directories
 # ============================
