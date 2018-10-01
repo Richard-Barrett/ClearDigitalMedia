@@ -17,6 +17,12 @@
 # https://askubuntu.com/questions/131979/how-to-install-synaptic-package-manager
 # https://www.tecmint.com/things-you-mostly-need-to-do-after-installing-ubuntu-16-04/4/
 
+# Script will check for error detection and move to next command if detected with traceback error
+# ===============================================================================================
+
+
+
+
 # Script will install required packages
 # ======================================
 
@@ -68,10 +74,6 @@ sudo apt-key add <BROADSIGN PACKAGE>
 # Script will check for dependencies and push new commits
 # =======================================================
 sudo apt-get install -f -y
-
-# Script will edit the suoders file
-# =================================
-sudo visudo 
 
 # script will edit and invoke bash and print an alias onto .bashrc in wd
 # ======================================================================
