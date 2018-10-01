@@ -1,0 +1,47 @@
+equired Package Installation
+Execute sudo apt-get update and sudo apt-get upgrade to update the OS.
+Execute sudo apt-get install ssh to install ssh for remote access.
+Execute sudo apt-get install libglib2.0-0. This package is required for the use of Flash.
+Execute sudo apt-get install libgtk2.0-0. This package is required for the use of Flash.
+
+
+libhal1
+libhal-storage1
+libgtk2.0-0
+libatk1.0-0
+libpango1.0-0
+libcairo2
+udev
+dbus
+libgl1-mesa-glx
+libgl1-mesa-dri
+libglu1-mesa
+x11-xserver-utils
+alsa-base
+libnss3-1d
+libnspr4-0d
+
+To install Broadsign Control Player on Linux:
+Download the latest player package from http://portal.broadsign.com
+Place the package in the /tmp/ directory.
+Install the package by executing the following command:
+
+sudo dpkg -i /tmp/[package name]
+
+/opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh
+
+Or, if you are already in the bin folder:
+
+./start_bsp_undedicated.sh
+
+If you want to undedicate the player once you dedicated it, do the command:
+
+/opt/broadsign/suite/bsp/bin/dedicated_bsp.sh undostart_bsp_undedicated.sh
+
+Or, if you are already in the bin folder:
+
+./start_bsp_undedicated.sh
+
+If you want to undedicate the player once you dedicated it, do the command:
+
+/opt/broadsign/suite/bsp/bin/dedicated_bsp.sh undo
