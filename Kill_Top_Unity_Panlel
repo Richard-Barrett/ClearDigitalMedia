@@ -1,0 +1,2 @@
+sudo mv /usr/lib/x86_64-linux-gnu/compiz/libunityshell.so /usr/lib/x86_64-linux-gnu/compiz/libunityshell.so.disabled
+sudo mv /usr/share/compiz/unityshell.xml /usr/share/compiz/unityshell.xml.disabled
