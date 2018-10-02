@@ -10,6 +10,7 @@
 # http://www.codebind.com/linux-tutorials/install-curl-ubuntu-16-04/
 # https://askubuntu.com/questions/833863/how-to-install-animation-addon-plugin-of-compiz-in-ubuntu-16-04
 # https://broadsign.com/docs/broadsign-control/12-1/install-player-on-linux.html
+# https://askubuntu.com/questions/457371/how-to-add-an-application-icons-to-the-desktop-in-14-04
 
 
 # Tweaking Documentation
@@ -20,9 +21,6 @@
 
 # Script will check for error detection and move to next command if detected with traceback error
 # ===============================================================================================
-
-
-
 
 # Script will install required packages
 # ======================================
@@ -87,6 +85,28 @@ sudo apt-get install -f -y
 
 # Script will move all of the necessary applications onto the desktop 
 # ===================================================================
+# First copy your desired application's icon from the /usr/share/applications directory to Desktop
+# sudo cp /usr/share/applications/filename.desktop ~/Desktop
+# sudo chmod +x ~/Desktop/filename.desktop
+
+# Copy applications to desktop
+sudo cp /usr/share/applications/gnome-terminal.desktop ~/Desktop
+sudo chmod +x ~/Desktop/gnome-terminal.desktop
+
+sudo cp /usr/share/applications/unity-control-center.desktop ~/Desktop
+sudo chmod +x ~/Desktop/unity-control-center.desktop
+
+sudo cp /usr/share/applications/unity-datetime-panel.desktop ~/Desktop
+sudo chmod +x ~/Desktop/unity-datetime-panel.desktop
+
+sudo cp /usr/share/applications/unity-mouse-panel.desktop ~/Desktop
+sudo chmod +x ~/Desktop/unity-mouse-panel.desktop
+
+sudo cp /usr/share/applications/unity-network-panel.desktop ~/Desktop
+sudo chmod +x ~/Desktop/unity-network-panel.desktop
+
+sudo cp /usr/share/applications/com.teamviewer.TeamViewer.desktop ~/Desktop
+sudo chmod +x ~/Desktop/com.teamviewer.TeamViewer.desktop
 
 
 #Done
