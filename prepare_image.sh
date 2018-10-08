@@ -116,9 +116,9 @@ sudo chmod +x ~/Desktop/nautilus.desktop
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
 
-cd ~/Clear_Digital_media/
+cd ~/Clear_Digital_Media/
 
-sudo cp brcmfmac43455-sdio.txt /lib/firmware/brcm/
+sudo cp brcmfmac43455-sdio.txt /root/lib/firmware/brcm/
 
 cd
 
