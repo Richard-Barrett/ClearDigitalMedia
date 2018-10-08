@@ -118,7 +118,7 @@ sudo chmod +x ~/Desktop/nautilus.desktop
 
 cd ~/Clear_Digital_Media/
 
-sudo cp brcmfmac43455-sdio.txt /root/lib/firmware/brcm/
+sudo cp brcmfmac43455-sdio.txt /lib/firmware/brcm/
 
 cd
 
