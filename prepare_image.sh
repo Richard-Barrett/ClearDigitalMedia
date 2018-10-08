@@ -61,22 +61,21 @@ sudo sh -c 'echo "deb http://linux.teamviewer.com/deb preview main" >> /etc/apt/
 sudo apt update
 sudo apt install teamviewer -y
 
-teamviewer
 cd
 
 # Script will curl and install broadsign player under broadsign package
 # =====================================================================
-cd /Clear_Digital_Media/Broadsign/ 
+# cd /Clear_Digital_Media/Broadsign/ 
 
-wget --user <username> --password <pass> http://portal.broadsign.com
+# wget --user <username> --password <pass> http://portal.broadsign.com
 
-sudo apt-key add <BROADSIGN PACKAGE>
+# sudo apt-key add <BROADSIGN PACKAGE>
 
-sudo sh -c 'echo "deb http://portal.broadsign.com/deb stable main" >> /etc/apt/sources.list.d/broadsign.list'
-sudo sh -c 'echo "deb http://portal.broadsign.com/deb preview main" >> /etc/apt/sources.list.d/broadsign.list'
+# sudo sh -c 'echo "deb http://portal.broadsign.com/deb stable main" >> /etc/apt/sources.list.d/broadsign.list'
+# sudo sh -c 'echo "deb http://portal.broadsign.com/deb preview main" >> /etc/apt/sources.list.d/broadsign.list'
 
-sudo apt update
-sudo apt install broadsign -y
+# sudo apt update
+# sudo apt install broadsign -y
 
 # Script will check for dependencies and push new commits
 # =======================================================
@@ -108,5 +107,15 @@ sudo chmod +x ~/Desktop/unity-network-panel.desktop
 sudo cp /usr/share/applications/com.teamviewer.TeamViewer.desktop ~/Desktop
 sudo chmod +x ~/Desktop/com.teamviewer.TeamViewer.desktop
 
+
+# Script will start start-up programs and will enable daemons per program
+# =======================================================================
+
+# Enable Teamviewer Daemon
+
+# Enable Broadsign Daemon
+
+# Initialize Teamviewer and Broadsign
+teamvier && broadsign
 
 #Done
