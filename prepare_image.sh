@@ -122,6 +122,14 @@ sudo cp brcmfmac43455-sdio.txt /lib/firmware/brcm/
 
 cd
 
+# Script will change permssions on scripts that need permissions
+# ===============================================================
+
+cd ~/Clear_Digital_Media
+sudo chmod +x unity_global_menu_bar_destroy.sh
+sudo chmod +x unity_global_menu_bar_restore.sh
+cd
+
 # Script will start start-up programs and will enable daemons per program
 # =======================================================================
 
