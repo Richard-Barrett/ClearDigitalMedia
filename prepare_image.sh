@@ -113,6 +113,14 @@ sudo chmod +x ~/Desktop/com.teamviewer.TeamViewer.desktop
 sudo cp /usr/share/applications/nautilus.desktop ~/Desktop/
 sudo chmod +x ~/Desktop/nautilus.desktop
 
+# Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
+# ====================================================================
+
+cd ~/Clear_Digital_media/
+
+sudo cp brcmfmac43455-sdio.txt /lib/firmware/brcm/
+
+cd
 
 # Script will start start-up programs and will enable daemons per program
 # =======================================================================
