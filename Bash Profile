@@ -1,10 +1,21 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# Created by Richard Barrett & Chip Martin 
 # for examples
 
-# Aliases Commands for Crontab
+# Alias Commands for Crontabs
+# =============================
 alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && ./start_bsp_undedicated.sh'
 broadsign
+
+# Alias Commands for Systems Administration Management
+# ====================================================
+alias bash-restore='/bin/cp /etc/skel/.bashrc ~/'
+
+
+
+
+# =====================================================
 
 If not running interactively, don't do anything
 case $- in
