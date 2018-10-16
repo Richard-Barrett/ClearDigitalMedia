@@ -140,9 +140,13 @@ cd
 
 # Enable Broadsign Daemon
 
-# 
-
 # Initialize Teamviewer and Broadsign
 # teamvier && broadsign
+
+# Script will change the contents of the Bash Profile to match Bash\ Profile
+# ==========================================================================
+cd ~/Clear_Digital_Media
+mv Bash\ Profile ~/.bashrc
+cd~
 
 #Done
