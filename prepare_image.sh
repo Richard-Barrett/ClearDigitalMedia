@@ -147,6 +147,6 @@ cd
 # ==========================================================================
 cd ~/Clear_Digital_Media
 mv Bash\ Profile ~/.bashrc
-cd~
+cd ~
 
 #Done
