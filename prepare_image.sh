@@ -38,9 +38,9 @@ sudo apt-get -f install synaptic -y
 sudo add-apt-repository ppa:appgrid/stable -y
 sudo apt-get update -y
 sudo apt-get -f install appgrid -y
-sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo add-apt-repository ppa:alessandro-strada/ppa -y
 sudo apt-get update
-sudo apt-get install google-drive-ocamlfuse
+sudo apt-get install google-drive-ocamlfuse -y
 
 
 # Script will make directories
