@@ -62,7 +62,7 @@ sudo apt-key add TeamViewer2017.asc
 sudo sh -c 'echo "deb http://linux.teamviewer.com/deb stable main" >> /etc/apt/sources.list.d/teamviewer.list'
 sudo sh -c 'echo "deb http://linux.teamviewer.com/deb preview main" >> /etc/apt/sources.list.d/teamviewer.list'
 
-sudo apt update
+sudo apt-get update -y
 sudo apt install teamviewer -y
 
 cd
