@@ -26,6 +26,7 @@
 # ======================================
 
 sudo apt-get -f install git -y
+sudo apt-get -f install expect -y
 sudo apt-get -f install openssh-server openssh-client -y
 sudo apt-get install unity-tweak-tool -y
 sudo apt-get -f install curl -y
@@ -38,7 +39,14 @@ sudo apt-get -f install synaptic -y
 sudo add-apt-repository ppa:appgrid/stable -y
 sudo apt-get update -y
 sudo apt-get -f install appgrid -y
+sudo add-apt-repository ppa:alessandro-strada/ppa -y
+sudo apt-get update
+sudo apt-get install google-drive-ocamlfuse -y
 
+# Script will Utilize Expect tool to force repo and software updates
+# ==================================================================
+
+# Need to figure out how to work this out
 
 # Script will make directories
 # ============================
@@ -59,7 +67,7 @@ sudo apt-key add TeamViewer2017.asc
 sudo sh -c 'echo "deb http://linux.teamviewer.com/deb stable main" >> /etc/apt/sources.list.d/teamviewer.list'
 sudo sh -c 'echo "deb http://linux.teamviewer.com/deb preview main" >> /etc/apt/sources.list.d/teamviewer.list'
 
-sudo apt update
+sudo apt-get update -y
 sudo apt install teamviewer -y
 
 cd
@@ -134,10 +142,33 @@ cd
 # =======================================================================
 
 # Enable Teamviewer Daemon
+sudo -i
+teamviewer daemon enable
+su cleardigitalmedia
 
 # Enable Broadsign Daemon
+#
+#
+#
 
-# Initialize Teamviewer and Broadsign
-# teamvier && broadsign
+# Script will change the contents of the Bash Profile to match Bash\ Profile
+# ==========================================================================
+cd ~/Clear_Digital_Media
+mv Bash\ Profile ~/.bashrc
+cd ~
+
+# Script Downloads error wallpaper image for mediaplayer and sets it as desktop background
+# ========================================================================================
+wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
+gsettings set org.gnome.desktop.background picture-uri file:///home/cleardigitalmedia/HNN_ErrorScreen-01.jpg
+
+# Script changes to root user and forces an update/upgrade to system components
+# =============================================================================
+sudo -i
+  apt-get update -y
+  apt-get upgrade -y
+su cleardigitalmedia
+
+# Initialize Teamviewer and Broadsign on post-prep
 
 #Done
