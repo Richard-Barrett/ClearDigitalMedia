@@ -138,20 +138,6 @@ sudo chmod +x unity_global_menu_bar_destroy.sh
 sudo chmod +x unity_global_menu_bar_restore.sh
 cd
 
-# Script will start start-up programs and will enable daemons per program
-# =======================================================================
-
-# Enable Teamviewer Daemon
-sudo -i
-sudo systemctl start teamviewerd.service
-sudo teamviewer daemon enable
-su cleardigitalmedia
-
-# Enable Broadsign Daemon
-#
-#
-#
-
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
 cd ~/Clear_Digital_Media
