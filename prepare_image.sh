@@ -150,13 +150,6 @@ cd ~
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
 gsettings set org.gnome.desktop.background picture-uri file:///home/cleardigitalmedia/HNN_ErrorScreen-01.jpg
 
-# Script changes to root user and forces an update/upgrade to system components
-# =============================================================================
-sudo -i
-  apt-get update -y
-  apt-get upgrade -y
-su cleardigitalmedia
-
 # Initialize finish_script.sh
 # ===========================
 cd ~/Clear_Digital_Media
