@@ -136,6 +136,7 @@ cd
 cd ~/Clear_Digital_Media
 sudo chmod +x unity_global_menu_bar_destroy.sh
 sudo chmod +x unity_global_menu_bar_restore.sh
+sudo chmod +x finish_script.sh
 cd
 
 # Script will change the contents of the Bash Profile to match Bash\ Profile
@@ -156,6 +157,11 @@ sudo -i
   apt-get upgrade -y
 su cleardigitalmedia
 
-# Initialize Teamviewer and Broadsign on post-prep
+# Initialize finish_script.sh
+# ===========================
+cd ~/Clear_Digital_Media
+sudo ./finish_script.sh
+su cleardigitalmedia
+cd ~
 
 #Done
