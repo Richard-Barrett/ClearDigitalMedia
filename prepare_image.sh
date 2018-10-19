@@ -152,9 +152,9 @@ gsettings set org.gnome.desktop.background picture-uri file:///home/cleardigital
 
 # Initialize finish_script.sh
 # ===========================
-cd ~/Clear_Digital_Media
-sudo ./finish_script.sh
-su cleardigitalmedia
-cd ~
+#cd ~/Clear_Digital_Media
+#sudo ./finish_script.sh
+#su cleardigitalmedia
+#cd ~
 
 #Done
