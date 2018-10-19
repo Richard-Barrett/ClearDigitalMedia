@@ -26,6 +26,7 @@
 # ======================================
 
 sudo apt-get -f install git -y
+sudo apt-get -f install expect -y
 sudo apt-get -f install openssh-server openssh-client -y
 sudo apt-get install unity-tweak-tool -y
 sudo apt-get -f install curl -y
@@ -42,12 +43,16 @@ sudo add-apt-repository ppa:alessandro-strada/ppa -y
 sudo apt-get update
 sudo apt-get install google-drive-ocamlfuse -y
 
+# Script will Utilize Expect tool to force repo and software updates
+# ==================================================================
+
+# Need to figure out how to work this out
 
 # Script will make directories
 # ============================
 
-mkdir Clear_Digital_Media 
-  cd Clear_Digital_Media 
+mkdir Clear-Digital-Media 
+  cd Clear-Digital-Media 
     mkdir Apps && mkdir Broadsign && mkdir Services && mkdir Notes
 cd 
 
@@ -137,11 +142,14 @@ cd
 # =======================================================================
 
 # Enable Teamviewer Daemon
+sudo -i
+teamviewer daemon enable
+su cleardigitalmedia
 
 # Enable Broadsign Daemon
-
-# Initialize Teamviewer and Broadsign
-# teamvier && broadsign
+#
+#
+#
 
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
@@ -154,5 +162,13 @@ cd ~
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
 gsettings set org.gnome.desktop.background picture-uri file:///home/cleardigitalmedia/HNN_ErrorScreen-01.jpg
 
+# Script changes to root user and forces an update/upgrade to system components
+# =============================================================================
+sudo -i
+  apt-get update -y
+  apt-get upgrade -y
+su cleardigitalmedia
+
+# Initialize Teamviewer and Broadsign on post-prep
 
 #Done
