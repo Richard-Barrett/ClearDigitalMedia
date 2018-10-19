@@ -143,7 +143,8 @@ cd
 
 # Enable Teamviewer Daemon
 sudo -i
-teamviewer daemon enable
+sudo systemctl start teamviewerd.service
+sudo teamviewer daemon enable
 su cleardigitalmedia
 
 # Enable Broadsign Daemon
