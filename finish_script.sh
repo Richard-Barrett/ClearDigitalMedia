@@ -4,7 +4,6 @@
 # =======================================================================
 
 # Enable Teamviewer Daemon
-sudo -i
 sudo systemctl start teamviewerd.service
 sudo teamviewer daemon enable
 
@@ -14,7 +13,6 @@ sudo teamviewer daemon enable
 # =============================================================================
 apt-get update -y
 apt-get upgrade -y
-sudo su cleardigitalmedia
 
 
 #Done
