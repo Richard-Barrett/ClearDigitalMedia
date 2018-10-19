@@ -51,8 +51,8 @@ sudo apt-get install google-drive-ocamlfuse -y
 # Script will make directories
 # ============================
 
-mkdir Clear-Digital-Media 
-  cd Clear-Digital-Media 
+mkdir Clear_Digital_Media 
+  cd Clear_Digital_Media 
     mkdir Apps && mkdir Broadsign && mkdir Services && mkdir Notes
 cd 
 
