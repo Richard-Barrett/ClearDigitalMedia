@@ -150,11 +150,10 @@ cd ~
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
 gsettings set org.gnome.desktop.background picture-uri file:///home/cleardigitalmedia/HNN_ErrorScreen-01.jpg
 
-# Initialize finish_script.sh
-# ===========================
-#cd ~/Clear_Digital_Media
-#sudo ./finish_script.sh
-#su cleardigitalmedia
-#cd ~
+# Copy finish_script.sh into root directory & initialize finish_script.sh
+# ========================================================================
+cd ~/Clear_Digital_Media
+sudo ./finish_script.sh
+cd ~
 
 #Done
