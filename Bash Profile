@@ -5,7 +5,7 @@
 
 # Alias Commands for Crontabs
 # =============================
-alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && ./start_bsp_undedicated.sh'
+alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
 broadsign
 
 # Alias Commands for Systems Administration Management
