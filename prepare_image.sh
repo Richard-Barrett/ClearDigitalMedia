@@ -31,6 +31,7 @@ sudo apt-get -f install openssh-server openssh-client -y
 sudo apt-get install unity-tweak-tool -y
 sudo apt-get -f install curl -y
 sudo apt-get -f install traceroute -y
+sudo apt-get install hal -y
 sudo apt-get -f install sysstat -y
 sudo apt-get -f install wget -y
 sudo apt-get -f install vim -y
