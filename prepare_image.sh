@@ -29,6 +29,7 @@ sudo apt-get -f install git -y
 sudo apt-get -f install expect -y
 sudo apt-get -f install openssh-server openssh-client -y
 sudo apt-get install unity-tweak-tool -y
+sudo apt-get install openvpn -y
 sudo apt-get -f install curl -y
 sudo apt-get -f install traceroute -y
 sudo apt-get install hal -y
