@@ -1,0 +1,26 @@
+# This is a text file.
+# It explains what are necessarry start-up items and how to make them start-up accordingly.
+# This text file is propertuy of Clear Digital Media
+# =======================================================
+
+# Items Required for Start-up
+# Teamviewer
+# GNOME Terminal 
+# SSH Key Agent
+# Snap user application autostart helper
+
+# Pathways for start-up applications
+# ==================================
+# Items Required for Start-up
+# ---------------------------
+# Teamviewer - /opt/teamviewer/tv_bin/script/teamviewer
+# GNOME Terminal - gnome-terminal
+# SSH KeyAgent - /usr/bin/gnome-keyring-daemon --start --components=ssh
+# Snap user application autostart helper - /usr/bin/snap userd --autostart
+# 
+
+# The above applications must be added to the start-up items after the prepare_image.sh script has finished
+# Add these items to your start-up by clicking on the untiy bar and searching for start-up
+# Choose the start-up applications and then drag the items not included into the window UI from the desktop
+
+# The apps should now start on log-in
