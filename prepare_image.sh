@@ -139,6 +139,8 @@ cd ~/Clear_Digital_Media
 sudo chmod +x unity_global_menu_bar_destroy.sh
 sudo chmod +x unity_global_menu_bar_restore.sh
 sudo chmod +x finish_script.sh
+sudo chmod 755 client_data_push.sh
+  cp client_data_push.sh /etc/cron.daily/
 cd
 
 # Script will change the contents of the Bash Profile to match Bash\ Profile
