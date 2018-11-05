@@ -145,7 +145,7 @@ cd
 
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
-cd ~/Clear_Digital_Media
+cd /Clear_Digital_Media
 mv Bash\ Profile ~/.bashrc
 cd ~
 
@@ -156,13 +156,13 @@ gsettings set org.gnome.desktop.background picture-uri file:///home/cleardigital
 
 # Copy Logrotation Config into /etc/logrotate.conf
 # ================================================
-cd ~/Clear_Digital_Media
-cp logrotate.conf /etc/logrotate.conf
+cd /Clear_Digital_Media
+sudo cp logrotate.conf /etc/logrotate.conf
 cd ~
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
-cd ~/Clear_Digital_Media
+cd /Clear_Digital_Media
 sudo ./finish_script.sh
 cd ~
 
