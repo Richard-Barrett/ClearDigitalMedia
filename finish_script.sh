@@ -16,7 +16,7 @@ apt-get upgrade -y
 
 # Script will place the finishing touches like Crontab and Logrotate Utilizing Expect
 # ===================================================================================
-cd /Clear_Digital_media
+cd ~/Clear_Digital_media
 sudo cp logrotate.conf /etc/logrotate.conf
 cd ~
 
