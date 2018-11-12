@@ -136,10 +136,8 @@ sudo chmod +x ~/Desktop/nautilus.desktop
 # ====================================================================
 
 cd ~/Clear_Digital_Media/
-
 sudo cp brcmfmac43455-sdio.txt /lib/firmware/brcm/
-
-cd
+cd ~
 
 # Script will change permssions on scripts that need permissions
 # ===============================================================
@@ -148,9 +146,9 @@ cd ~/Clear_Digital_Media
 sudo chmod +x unity_global_menu_bar_destroy.sh
 sudo chmod +x unity_global_menu_bar_restore.sh
 sudo chmod +x finish_script.sh
-sudo chmod 755 client_data_push.sh
+sudo chmod +x client_data_push.sh
 sudo cp client_data_push.sh /etc/cron.daily/
-cd
+cd ~
 
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
