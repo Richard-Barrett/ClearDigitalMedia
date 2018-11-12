@@ -49,8 +49,8 @@ sudo apt-get -f install appgrid -y
 sudo add-apt-repository ppa:alessandro-strada/ppa -y
 sudo apt-get update
 sudo apt-get -f install openvpn -y
-sudo apt-get install --reinstall network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
-sudo service network-manager restart
+#sudo apt-get install --reinstall network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
+#sudo service network-manager restart
 sudo apt-get install google-drive-ocamlfuse -y
 sudo apt-get -f install xvnc4viewer -y
 
