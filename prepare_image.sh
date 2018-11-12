@@ -11,6 +11,11 @@
 # https://askubuntu.com/questions/833863/how-to-install-animation-addon-plugin-of-compiz-in-ubuntu-16-04
 # https://broadsign.com/docs/broadsign-control/12-1/install-player-on-linux.html
 # https://askubuntu.com/questions/457371/how-to-add-an-application-icons-to-the-desktop-in-14-04
+# https://www.finchvpn.com/guide/ubuntu/openvpn
+# https://www.linux.com/learn/configure-linux-clients-connect-openvpn-server
+# https://blog.ssdnodes.com/blog/tutorial-installing-openvpn-on-ubuntu-16-04/
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-16-04
+# https://www.linode.com/docs/applications/remote-desktop/install-vnc-on-ubuntu-16-04/
 
 
 # Tweaking Documentation
@@ -43,7 +48,11 @@ sudo apt-get update -y
 sudo apt-get -f install appgrid -y
 sudo add-apt-repository ppa:alessandro-strada/ppa -y
 sudo apt-get update
+sudo apt-get -f install openvpn -y
+sudo apt-get install --reinstall network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
+sudo service network-manager restart
 sudo apt-get install google-drive-ocamlfuse -y
+sudo apt-get -f install xvnc4viewer -y
 
 # Script will Utilize Expect tool to force repo and software updates
 # ==================================================================
