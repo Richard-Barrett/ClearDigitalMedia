@@ -127,6 +127,9 @@ sudo chmod +x ~/Desktop/com.teamviewer.TeamViewer.desktop
 sudo cp /usr/share/applications/nautilus.desktop ~/Desktop/
 sudo chmod +x ~/Desktop/nautilus.desktop
 
+sudo cp /usr/share/applications/mate-settings-properties.desktop ~/Desktop
+sudo chmod +x ~/Desktop/mate-settings-properties.desktop
+
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
 
