@@ -157,7 +157,7 @@ cd ~
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
 
 # Example: gsettings set org.mate.background picture-filename /home/test/Pictures/2.jpg
-gsettings set org.mate.desktop.background picture-filename /home/cleardigitalmedia/HNN_ErrorScreen-01.jpg
+gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_ErrorScreen-01.jpg
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
