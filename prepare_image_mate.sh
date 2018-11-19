@@ -155,9 +155,10 @@ cd ~
 # Script Downloads error wallpaper image for mediaplayer and sets it as desktop background
 # ========================================================================================
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
+wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen_11-14-18.jpg
 
 # Example: gsettings set org.mate.background picture-filename /home/test/Pictures/2.jpg
-gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_ErrorScreen-01.jpg
+gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_ErrorScreen_11-14-18.jpg
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
