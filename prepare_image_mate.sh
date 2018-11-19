@@ -107,28 +107,28 @@ sudo apt-get install -f -y
 
 # Copy applications to desktop
 sudo cp /usr/share/applications/mate-terminal.desktop ~/Desktop
-sudo chmod +x ~/Desktop/mate-terminal.desktop
+sudo chmod 777 ~/Desktop/mate-terminal.desktop
 
 sudo cp /usr/share/applications/network.desktop ~/Desktop
-sudo chmod +x ~/Desktop/network.desktop
+sudo chmod 777 ~/Desktop/network.desktop
 
 sudo cp /usr/share/applications/mate-display-properties.desktop ~/Desktop
-sudo chmod +x ~/Desktop/mate-display-properties.desktop
+sudo chmod 777 ~/Desktop/mate-display-properties.desktop
 
 sudo cp /usr/share/applications/mate-appearance-panel.desktop ~/Desktop
-sudo chmod +x ~/Desktop/mate-appearance-panel.desktop
+sudo chmod 777 ~/Desktop/mate-appearance-panel.desktop
 
 sudo cp /usr/share/applications/mate-network-properties.desktop ~/Desktop
-sudo chmod +x ~/Desktop/mate-network-properties.desktop
+sudo chmod 777 ~/Desktop/mate-network-properties.desktop
 
 sudo cp /usr/share/applications/com.teamviewer.TeamViewer.desktop ~/Desktop
-sudo chmod +x ~/Desktop/com.teamviewer.TeamViewer.desktop
+sudo chmod 777 ~/Desktop/com.teamviewer.TeamViewer.desktop
 
 sudo cp /usr/share/applications/nautilus.desktop ~/Desktop/
-sudo chmod +x ~/Desktop/nautilus.desktop
+sudo chmod 777 ~/Desktop/nautilus.desktop
 
 sudo cp /usr/share/applications/mate-settings-properties.desktop ~/Desktop
-sudo chmod +x ~/Desktop/mate-settings-properties.desktop
+sudo chmod 777 ~/Desktop/mate-settings-properties.desktop
 
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
@@ -141,8 +141,8 @@ cd ~
 # ===============================================================
 
 cd ~/Clear_Digital_Media
-sudo chmod +x finish_script.sh
-sudo chmod +x client_data_push.sh
+sudo chmod 777 finish_script.sh
+sudo chmod 777 client_data_push.sh
 sudo cp client_data_push.sh /etc/cron.daily/
 cd ~
 
