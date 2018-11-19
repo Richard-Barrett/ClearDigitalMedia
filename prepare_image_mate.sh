@@ -107,48 +107,48 @@ sudo apt-get install -f -y
 
 # Copy applications to desktop
 sudo cp /usr/share/applications/mate-terminal.desktop ~/Desktop
-sudo chmod 777 -R ~/Desktop/mate-terminal.desktop
+sudo chmod 777 -R /Desktop/mate-terminal.desktop
 
 sudo cp /usr/share/applications/network.desktop ~/Desktop
-sudo chmod 777 -R ~/Desktop/network.desktop
+sudo chmod 777 -R /Desktop/network.desktop
 
 sudo cp /usr/share/applications/mate-display-properties.desktop ~/Desktop
-sudo chmod 777 -R ~/Desktop/mate-display-properties.desktop
+sudo chmod 777 -R /Desktop/mate-display-properties.desktop
 
 sudo cp /usr/share/applications/mate-appearance-panel.desktop ~/Desktop
-sudo chmod 777 -R ~/Desktop/mate-appearance-panel.desktop
+sudo chmod 777 -R /Desktop/mate-appearance-panel.desktop
 
 sudo cp /usr/share/applications/mate-network-properties.desktop ~/Desktop
-sudo chmod 777 -R ~/Desktop/mate-network-properties.desktop
+sudo chmod 777 -R /Desktop/mate-network-properties.desktop
 
 sudo cp /usr/share/applications/com.teamviewer.TeamViewer.desktop ~/Desktop
-sudo chmod 777 -R ~/Desktop/com.teamviewer.TeamViewer.desktop
+sudo chmod 777 -R /Desktop/com.teamviewer.TeamViewer.desktop
 
 sudo cp /usr/share/applications/nautilus.desktop ~/Desktop/
-sudo chmod 777 -R ~/Desktop/nautilus.desktop
+sudo chmod 777 -R /Desktop/nautilus.desktop
 
 sudo cp /usr/share/applications/mate-settings-properties.desktop ~/Desktop
-sudo chmod 777 -R ~/Desktop/mate-settings-properties.desktop
+sudo chmod 777 -R /Desktop/mate-settings-properties.desktop
 
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
 
-cd ~/Clear_Digital_Media/
+cd Desktop/Clear_Digital_Media/
 sudo cp brcmfmac43455-sdio.txt /lib/firmware/brcm/
 cd ~
 
 # Script will change permssions on scripts that need permissions
 # ===============================================================
 
-cd ~/Clear_Digital_Media
-sudo chmod 777 -R finish_script.sh
+cd Desktop/Clear_Digital_Media
+sudo chmod 777 -R finish_script_mate.sh
 sudo chmod 777 -R client_data_push.sh
 sudo cp client_data_push.sh /etc/cron.daily/
 cd ~
 
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
-cd ~/Clear_Digital_Media
+cd Desktop/Clear_Digital_Media
 mv Bash\ Profile ~/.bashrc
 cd ~
 
@@ -161,7 +161,7 @@ gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_E
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
-cd ~/Clear_Digital_Media
+cd Desktop/Clear_Digital_Media
 sudo ./finish_script.sh
 cd ~
 
