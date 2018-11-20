@@ -141,8 +141,8 @@ cd ~
 # ===============================================================
 
 cd Desktop/Clear_Digital_Media
-sudo chmod 777 finish_script_mate.sh
-sudo chmod 777 client_data_push.sh
+sudo chmod +x finish_script_mate.sh
+sudo chmod +x client_data_push.sh
 sudo cp client_data_push.sh /etc/cron.daily/
 cd ~
 
@@ -163,7 +163,7 @@ gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_E
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
 cd Desktop/Clear_Digital_Media
-./finish_script.sh
+sudo /home/cleardigitalmedia/Desktop/finish_script.sh
 cd ~
 
 #Done
