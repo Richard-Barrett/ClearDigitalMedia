@@ -163,7 +163,7 @@ gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_E
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
 cd Desktop/Clear_Digital_Media
-sudo /home/cleardigitalmedia/Desktop/finish_script.sh
+sudo /home/cleardigitalmedia/Desktop/Clear_Digital_Media/finish_script.sh
 cd ~
 
 #Done
