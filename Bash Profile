@@ -3,10 +3,48 @@
 # Created by Richard Barrett & Chip Martin 
 # for examples
 
+# Alias & Variables for Broadsign Alias Process
+# =============================================
+# 	    Internet State DOWN/UP
+# =============================================
+# ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <=7'
+
+# NOTE** The above command is for reference only!
+# Do NOT comment out the above reference!
+# The command will detect if state is DOWN for Internet Access
+# The Command will detect if state is UP for Internet Access
+
+
+# Variable Assignment for Inet and Broadsign Loop
+# ===============================================
+# inet_state='ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <=7''
+# inetstate-good='state UP'
+# inetstate-bad='state DOWN'
+
+
 # Alias Commands for Crontabs
 # =============================
 alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
+
+# Loop for Internet Connection & Start Broadsign
+# ==============================================
+#echo "$(inet_state)
+#for inet_state in "$(inet_state)
+#do {
+#     if inet_state="$(inetstate-bad)";
+#       then 'sleep 9999999999';
+#     elif inet_state="$(inetstate-good)";
+#       broadsign;      
+#broadsign
+#     fi
+#}
+#done
+
+
 broadsign
+# NOTE**: TAKE THE ABOVE LINE 40 OUT, ONCE THE LOOP IS COMPLETED!!!
+# ==============================================
+
 
 # Alias Commands for Systems Administration Management
 # ====================================================
