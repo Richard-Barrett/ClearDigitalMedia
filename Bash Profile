@@ -18,8 +18,8 @@
 # Variable Assignment for Inet and Broadsign Loop
 # ===============================================
 # inet_state='ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <=7''
-# inetstate-good='state UP'
-# inetstate-bad='state DOWN'
+# inetstate_good='state UP'
+# inetstate_bad='state DOWN'
 
 
 # Alias Commands for Crontabs
@@ -41,7 +41,7 @@ alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/b
 #done
 
 
-broadsign
+sleep 10 && broadsign
 # NOTE**: TAKE THE ABOVE LINE 40 OUT, ONCE THE LOOP IS COMPLETED!!!
 # ==============================================
 
