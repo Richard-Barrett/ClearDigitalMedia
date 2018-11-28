@@ -7,7 +7,7 @@
 # =============================================
 # 	    Internet State DOWN/UP
 # =============================================
-# ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <=7'
+# ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <= 7'
 
 # NOTE** The above command is for reference only!
 # Do NOT comment out the above reference!
@@ -34,7 +34,7 @@ alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/b
 #     if inet_state="$(inetstate-bad)";
 #       then 'sleep 9999999999';
 #     elif inet_state="$(inetstate-good)";
-#       broadsign;      
+#       sleep 10 && broadsign;      
 #broadsign
 #     fi
 #}
