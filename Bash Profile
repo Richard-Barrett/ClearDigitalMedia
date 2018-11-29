@@ -18,31 +18,43 @@
 # Variable Assignment for Inet and Broadsign Loop
 # ===============================================
 # inet_state='ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <=7''
-# inetstate_good='state UP'
-# inetstate_bad='state DOWN'
+inet_state=`fping 8.8.8.8`
 
+# =======================================
+# Alias Commands for Boradsign & Crontabs
+# =======================================
+alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
 
+# ==================================================
+#       Internet State Connectivity Variables
+# ==================================================
+# Internet Connection Available
+inet_state_good="8.8.8.8 is alive"
+
+# Internet Connection Unavailable
+inet_state_bad="8.8.8.8 is unreachable"
+# --------------------------------------------------
+
+# =============================
 # Alias Commands for Crontabs
 # =============================
 alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
 
+# Test for Network Connection
+# https://stackoverflow.com/questions/53506590/for-loop-help-in-bash-profile/53507501#53507501
+
+# ==============================================
 # Loop for Internet Connection & Start Broadsign
 # ==============================================
-#echo "$(inet_state)
-#for inet_state in "$(inet_state)
-#do {
-#     if inet_state="$(inetstate-bad)";
-#       then 'sleep 9999999999';
-#     elif inet_state="$(inetstate-good)";
-#       sleep 10 && broadsign;      
-#broadsign
-#     fi
-#}
-#done
 
+while true; do
+        if [[ "${inet_state}" = "${inet_state_good}" ]];
+                then sleep 10 && broadsign && break
+        elif [[ "${inet_state}" = "${inet_state_bad}" ]];
+                then sleep 999999999
+        fi
+done
 
-sleep 10 && broadsign
-# NOTE**: TAKE THE ABOVE LINE 40 OUT, ONCE THE LOOP IS COMPLETED!!!
 # ==============================================
 
 
