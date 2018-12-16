@@ -18,8 +18,8 @@ apt-get upgrade -y
 # ===================================================================================
 cd Desktop/Clear_Digital_media
 sudo cp logrotate.conf /etc/logrotate.conf
+sudo cp 50-no-guest.conf /etc/lightdm/lightdm.conf.d
 cd ~
 
 
 #Done
-
