@@ -51,7 +51,7 @@ while true; do
         if [[ "${inet_state}" = "${inet_state_good}" ]];
                 then sleep 10 && broadsign && break
         elif [[ "${inet_state}" = "${inet_state_bad}" ]];
-                then sudo pkill broadsign && echo "Your Player has a technical issue, please call 1-630-321-2350 ext. 150" && sleep 999999999
+                then echo "Your Player has a technical issue, please call 1-630-321-2350 ext. 150" && sleep 999999999 && sudo pkill broadsign 
         fi
 done
 
