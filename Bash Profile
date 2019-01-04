@@ -38,7 +38,7 @@ inet_state_bad="8.8.8.8 is unreachable"
 # =============================
 # Alias Commands for Crontabs
 # =============================
-alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
+#alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
 
 # Test for Network Connection
 # https://stackoverflow.com/questions/53506590/for-loop-help-in-bash-profile/53507501#53507501
