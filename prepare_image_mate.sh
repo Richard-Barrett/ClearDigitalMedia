@@ -100,6 +100,14 @@ sudo dpkg -i bsplayer-13_0_0-2-amd64.deb
 # =======================================================
 sudo apt-get install -f -y
 
+# Script will download the Image for the CDM Player Icon Badge in /Downloads/
+# ===========================================================================
+cd /Downlaods/
+
+wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/CDMIcon_64x64.svg
+
+cd ~
+
 
 # Script will move all of the necessary applications onto the desktop 
 # ===================================================================
@@ -131,6 +139,9 @@ sudo chmod 777 ~/Desktop/nautilus.desktop
 
 sudo cp /usr/share/applications/mate-settings-properties.desktop ~/Desktop
 sudo chmod 777 ~/Desktop/mate-settings-properties.desktop
+
+sudo cp Desktop/Clear_Digital_Media/CDM Player.desktop ~/Desktop
+sudo chmod 777 ~/Desktop/CDM Player.desktop
 
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
@@ -165,7 +176,7 @@ gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_E
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
-cd ~/Clear_Digital_Media
+#cd ~/Clear_Digital_Media
 sudo ./finish_script_mate.sh
 cd ~
 
