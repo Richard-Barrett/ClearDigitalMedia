@@ -1,0 +1,8 @@
+[Desktop entry]
+Version=1.0
+Name=CDM Player
+Comment=Open CDM Player
+Exec=/opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh
+Icon=/Downloads/CDMIcon_64x64.svg
+Terminal=false
+Type=ApplicationCategories=Utility;Application;
