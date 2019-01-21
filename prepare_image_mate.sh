@@ -162,7 +162,7 @@ cd ~
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
 cd Desktop/Clear_Digital_Media
-mv Bash\ Profile ~/.bashrc
+cp Bash\ Profile ~/.bashrc
 cd ~
 
 # Script Downloads error wallpaper image for mediaplayer and sets it as desktop background
