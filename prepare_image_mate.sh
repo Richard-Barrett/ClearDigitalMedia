@@ -102,10 +102,11 @@ sudo apt-get install -f -y
 
 # Script will download the Image for the CDM Player & Stop Icon Badge in /Downloads/
 # ==================================================================================
-cd /Documents/
+cd ~/Downloads/
 
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/CDMIcon_64x64.svg
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/CDM+Stop-transb.png
+wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/Stop_Flare_Text_Enlarged.png
 
 cd ~
 
