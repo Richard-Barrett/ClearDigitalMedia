@@ -154,6 +154,12 @@ sudo chmod 777 ~/Desktop/CDM\ Stop
 
 cd ~
 
+# Script copies bash.txt. to ~/Documents/
+# =======================================
+cd ~/Desktop/Clear_Digital_Media/
+sudo cp bash.txt ~/Documents/
+cd ~
+
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
 
@@ -192,3 +198,4 @@ sudo ./finish_script_mate.sh
 cd ~
 
 #Done
+#END
