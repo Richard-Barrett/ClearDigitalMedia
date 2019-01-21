@@ -11,7 +11,7 @@ cd ~/Documents/
 cd ~
 
 source .bashrc 
-	broadsign
+	sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh
 
 # Player should start
 # ~/.bashrc should be fixed with alias command uncommented
