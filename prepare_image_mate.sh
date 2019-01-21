@@ -100,11 +100,12 @@ sudo dpkg -i bsplayer-13_0_0-2-amd64.deb
 # =======================================================
 sudo apt-get install -f -y
 
-# Script will download the Image for the CDM Player Icon Badge in /Downloads/
-# ===========================================================================
-cd /Downlaods/
+# Script will download the Image for the CDM Player & Stop Icon Badge in /Downloads/
+# ==================================================================================
+cd /Documents/
 
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/CDMIcon_64x64.svg
+wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/CDM+Stop-transb.png
 
 cd ~
 
@@ -140,8 +141,11 @@ sudo chmod 777 ~/Desktop/nautilus.desktop
 sudo cp /usr/share/applications/mate-settings-properties.desktop ~/Desktop
 sudo chmod 777 ~/Desktop/mate-settings-properties.desktop
 
-sudo cp Desktop/Clear_Digital_Media/CDM Player.desktop ~/Desktop
-sudo chmod 777 ~/Desktop/CDM Player.desktop
+sudo cp Desktop/Clear_Digital_Media/CDM\ Player ~/Desktop
+sudo chmod 777 ~/Desktop/CDM\ Player
+
+sudo cp Desktop/Clear_Digital_Media/CDM\ Stop ~/Desktop
+sudo chmod 777 ~/Desktop/CDM\ Stop
 
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
