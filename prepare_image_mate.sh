@@ -142,23 +142,29 @@ sudo chmod 777 ~/Desktop/nautilus.desktop
 sudo cp /usr/share/applications/mate-settings-properties.desktop ~/Desktop
 sudo chmod 777 ~/Desktop/mate-settings-properties.desktop
 
-sudo cp Desktop/Clear_Digital_Media/CDM\ Player ~/Desktop
+# Script will prepare the desktop with two script icons to start/stop player
+# ==========================================================================
+cd ~/Destop/Clear_Digital_Media/
+
+sudo cp CDM\ Player ~/Desktop
 sudo chmod 777 ~/Desktop/CDM\ Player
 
-sudo cp Desktop/Clear_Digital_Media/CDM\ Stop ~/Desktop
+sudo cp CDM\ Stop ~/Desktop
 sudo chmod 777 ~/Desktop/CDM\ Stop
+
+cd ~
 
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
 
-cd Desktop/Clear_Digital_Media/
+cd ~/Desktop/Clear_Digital_Media/
 sudo cp brcmfmac43455-sdio.txt /lib/firmware/brcm/
 cd ~
 
 # Script will change permssions on scripts that need permissions
 # ===============================================================
 
-cd Desktop/Clear_Digital_Media
+cd ~/Desktop/Clear_Digital_Media
 sudo chmod +x finish_script_mate.sh
 sudo chmod +x client_data_push.sh
 sudo cp client_data_push.sh /etc/cron.daily/
@@ -166,7 +172,7 @@ cd ~
 
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
-cd Desktop/Clear_Digital_Media
+cd ~/Desktop/Clear_Digital_Media
 cp Bash\ Profile ~/.bashrc
 cd ~
 
@@ -181,7 +187,7 @@ gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_E
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
-#cd ~/Clear_Digital_Media
+cd ~/Desktop/Clear_Digital_Media
 sudo ./finish_script_mate.sh
 cd ~
 
