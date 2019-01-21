@@ -1,0 +1,207 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @Cleardigitalmedia Sign out
+0
+0 2 Cleardigitalmedia/Clear_Digital_Media
+forked from Richard-Barrett/Clear_Digital_Media
+ Code  Pull requests 0  Projects 0  Wiki  Insights  Settings
+Clear_Digital_Media/Bash Profile
+4df5a15  16 days ago
+@Cleardigitalmedia Cleardigitalmedia Update Bash Profile
+@Cleardigitalmedia @Richard-Barrett
+     
+176 lines (138 sloc)  5.91 KB
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# Created by Richard Barrett & Chip Martin 
+# for examples
+
+# Alias & Variables for Broadsign Alias Process
+# =============================================
+# 	    Internet State DOWN/UP
+# =============================================
+# ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <= 7'
+
+# NOTE** The above command is for reference only!
+# Do NOT comment out the above reference!
+# The command will detect if state is DOWN for Internet Access
+# The Command will detect if state is UP for Internet Access
+
+
+# Variable Assignment for Inet and Broadsign Loop
+# ===============================================
+# inet_state='ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <=7''
+inet_state=`fping 8.8.8.8`
+
+# =======================================
+# Alias Commands for Broadsign & Crontabs
+# =======================================
+alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
+
+
+# NOTE**: 
+# Step 1. To activate Broadsign Service you have to comment out the uncommented alias above by using "wq!" for vim!!!
+# Step 2. Source the bashrc profile in the terminal by hitting ctrl+t and then typing in "source .bashrc" and hit enter
+
+# ==================================================
+#       Internet State Connectivity Variables
+# ==================================================
+# Internet Connection Available
+inet_state_good="8.8.8.8 is alive"
+
+# Internet Connection Unavailable
+inet_state_bad="8.8.8.8 is unreachable"
+# --------------------------------------------------
+
+# Test for Network Connection
+# https://stackoverflow.com/questions/53506590/for-loop-help-in-bash-profile/53507501#53507501
+
+# ==============================================
+# Loop for Internet Connection & Start Broadsign
+# ==============================================
+
+while true; do
+        if [[ "${inet_state}" = "${inet_state_good}" ]];
+                then sleep 10 && broadsign && break
+        elif [[ "${inet_state}" = "${inet_state_bad}" ]];
+                then echo "Your Player has a technical issue, please call 1-630-321-2350 ext. 150" && sleep 999999999 && sudo pkill broadsign 
+        fi
+done
+
+# ==============================================
+
+
+# Alias Commands for Systems Administration Management
+# ====================================================
+alias bash-restore='/bin/cp /etc/skel/.bashrc ~/'
+
+
+
+
+# =====================================================
+
+#If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+HISTFILESIZE=2000
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
