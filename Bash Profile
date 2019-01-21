@@ -23,7 +23,7 @@ inet_state=`fping 8.8.8.8`
 # =======================================
 # Alias Commands for Broadsign & Crontabs
 # =======================================
-#alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
+alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
 
 
 # NOTE**: 
