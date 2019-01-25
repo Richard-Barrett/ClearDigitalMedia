@@ -145,9 +145,11 @@ sudo chmod 777 ~/Desktop/mate-settings-properties.desktop
 # ==========================================================================
 cd ~/Destop/Clear_Digital_Media/
 
+sudo chmod +x CDM\ Player
 sudo cp /Destop/Clear_Digital_Media/CDM\ Player ~/Desktop
 sudo chmod 777 ~/Desktop/CDM\ Player
 
+sudo chmod +x CDM\ Stop
 sudo cp /Destop/Clear_Digital_Media/CDM\ Stop ~/Desktop
 sudo chmod 777 ~/Desktop/CDM\ Stop
 
