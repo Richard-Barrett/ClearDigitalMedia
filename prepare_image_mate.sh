@@ -145,10 +145,10 @@ sudo chmod 777 ~/Desktop/mate-settings-properties.desktop
 # ==========================================================================
 cd ~/Destop/Clear_Digital_Media/
 
-sudo cp CDM\ Player ~/Desktop
+sudo cp /Destop/Clear_Digital_Media/CDM\ Player ~/Desktop
 sudo chmod 777 ~/Desktop/CDM\ Player
 
-sudo cp CDM\ Stop ~/Desktop
+sudo cp /Destop/Clear_Digital_Media/CDM\ Stop ~/Desktop
 sudo chmod 777 ~/Desktop/CDM\ Stop
 
 cd ~
@@ -193,7 +193,7 @@ gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_E
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
 cd ~/Desktop/Clear_Digital_Media
-sudo ./finish_script_mate.sh
+sudo /Destop/Clear_Digital_Media/finish_script_mate.sh
 cd ~
 
 #Done
