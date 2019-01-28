@@ -37,6 +37,7 @@ sudo apt-get install openvpn -y
 sudo apt-get -f install curl -y
 sudo apt-get -f install fping -y
 sudo apt-get -f install iperf -y
+sudo apt-get -f install kazam -y
 sudo apt-get -f install traceroute -y
 sudo apt-get install hal -y
 sudo apt-get -f install sysstat -y
