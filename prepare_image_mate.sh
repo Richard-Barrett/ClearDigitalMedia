@@ -151,6 +151,14 @@ sudo ./desktop_custom_scripts.sh
 
 cd ~
 
+# Script will download Unifies Remote Server and append it to the desktop
+# ==================================================================================================
+# URL: https://www.unifiedremote.com/tutorials/how-to-install-unified-remote-server-deb-via-terminal
+
+wget -O urserver.deb http://www.unifiedremote.com/d/linux-x64-deb
+
+sudo dpkg -i urserver.deb -f -y
+
 # Script copies bash.txt. to ~/Documents/
 # =======================================
 cd ~/Desktop/Clear_Digital_Media/
