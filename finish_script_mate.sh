@@ -11,8 +11,8 @@ sudo teamviewer daemon enable
 
 # Script changes to root user and forces an update/upgrade to system components
 # =============================================================================
-apt-get update -y
-apt-get upgrade -y
+#apt-get update -y
+#apt-get upgrade -y
 
 # Script will place the finishing touches like Crontab and Logrotate Utilizing Expect
 # ===================================================================================
