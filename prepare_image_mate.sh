@@ -1,7 +1,8 @@
 #!/bin/bash
-# Created by: Richard Barrett & Chip Martin
+# Created by: Richard Barrett
 # Date: 11/13/2018
-# Version 1.0
+# Version 1.9
+# ============================
 
 # Docuementation for script
 # ==========================
@@ -189,17 +190,19 @@ cd ~
 
 # Script Downloads error wallpaper image for mediaplayer and sets it as desktop background
 # ========================================================================================
+cd ~/Downloads/
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen_11-14-18.jpg
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen_12-27-18.jpg
+cd ~
 
 # Example: gsettings set org.mate.background picture-filename /home/test/Pictures/2.jpg
-gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_ErrorScreen_12-27-18.jpg
+gsettings set org.mate.background picture-filename /home/cleardigitalmedia/Downloads/HNN_ErrorScreen_12-27-18.jpg
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
 cd ~/Desktop/Clear_Digital_Media
-sudo /Destop/Clear_Digital_Media/finish_script_mate.sh
+sudo ./finish_script_mate.sh
 cd ~
 
 #Done
