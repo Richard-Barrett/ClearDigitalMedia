@@ -47,15 +47,15 @@ sudo apt-get -f install wget -y
 sudo apt-get -f install vim -y
 sudo apt-get -f install synaptic -y
 sudo add-apt-repository ppa:appgrid/stable -y
-sudo apt-get update -y
 sudo apt-get -f install appgrid -y
 sudo add-apt-repository ppa:alessandro-strada/ppa -y
 sudo apt-get update
 sudo apt-get -f install openvpn -y
-#sudo apt-get install --reinstall network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
-#sudo service network-manager restart
+sudo apt-get install --reinstall network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
+sudo service network-manager restart
 sudo apt-get install google-drive-ocamlfuse -y
 sudo apt-get -f install xvnc4viewer -y
+sudo apt-get update -y
 
 # Script will Utilize Expect tool to force repo and software updates
 # ==================================================================
@@ -65,10 +65,10 @@ sudo apt-get -f install xvnc4viewer -y
 # Script will make directories
 # ============================
 
-mkdir Clear_Digital_Media 
-  cd Clear_Digital_Media 
+mkdir Cleardigitalmedia 
+  cd Cleardigitalmedia 
     mkdir Apps && mkdir Broadsign && mkdir Services && mkdir Notes
-cd 
+cd ~
 
 
 # Script will use wget and download Teamviewer and install into tmp
@@ -84,15 +84,15 @@ sudo sh -c 'echo "deb http://linux.teamviewer.com/deb preview main" >> /etc/apt/
 sudo apt-get update -y
 sudo apt install teamviewer -y
 
-cd
+cd ~
 
 # Script will curl and install broadsign player under broadsign package
 # =====================================================================
-cd /Clear_Digital_Media/Broadsign/ 
+cd /tmp
 
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/bsplayer-13_0_0-2-amd64.deb
 
-cd 
+cd ~
 
 sudo dpkg -i bsplayer-13_0_0-2-amd64.deb
 
@@ -105,7 +105,7 @@ sudo apt-get install -f -y
 
 # Script will download the Image for the CDM Player & Stop Icon Badge in /Downloads/
 # ==================================================================================
-cd ~/Downloads/
+cd Downloads/
 
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/CDMIcon_64x64.svg
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/Stop_it.png
@@ -146,7 +146,7 @@ sudo chmod 777 ~/Desktop/mate-settings-properties.desktop
 
 # Script will prepare the desktop with two script icons to start/stop player
 # ==========================================================================
-cd ~/Destop/Clear_Digital_Media/
+cd Destop/Clear_Digital_Media/
 
 sudo ./desktop_custom_scripts.sh
 
@@ -162,21 +162,21 @@ sudo dpkg -i urserver.deb -f -y
 
 # Script copies bash.txt. to ~/Documents/
 # =======================================
-cd ~/Desktop/Clear_Digital_Media/
+cd Desktop/Clear_Digital_Media/
 sudo cp bash.txt ~/Documents/
 cd ~
 
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
 
-cd ~/Desktop/Clear_Digital_Media/
+cd Desktop/Clear_Digital_Media/
 sudo cp brcmfmac43455-sdio.txt /lib/firmware/brcm/
 cd ~
 
 # Script will change permssions on scripts that need permissions
 # ===============================================================
 
-cd ~/Desktop/Clear_Digital_Media
+cd Desktop/Clear_Digital_Media
 sudo chmod +x finish_script_mate.sh
 sudo chmod +x client_data_push.sh
 sudo cp client_data_push.sh /etc/cron.daily/
@@ -184,13 +184,13 @@ cd ~
 
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
-cd ~/Desktop/Clear_Digital_Media
+cd Desktop/Clear_Digital_Media
 cp Bash\ Profile ~/.bashrc
 cd ~
 
 # Script Downloads error wallpaper image for mediaplayer and sets it as desktop background
 # ========================================================================================
-cd ~/Downloads/
+cd Downloads/
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen_11-14-18.jpg
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen_12-27-18.jpg
@@ -201,7 +201,7 @@ gsettings set org.mate.background picture-filename /home/cleardigitalmedia/Downl
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
-cd ~/Desktop/Clear_Digital_Media
+cd Desktop/Clear_Digital_Media
 sudo ./finish_script_mate.sh
 cd ~
 
