@@ -7,7 +7,7 @@
 # ====================
 /bin/cp /etc/skel/.bashrc ~/
 	cd ~
-source .bashrc
+source .bashrc && reboot
 
 # Player should stop playing
 # ~/.bashrc is restored to skeleton
