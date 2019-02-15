@@ -202,7 +202,14 @@ gsettings set org.mate.background picture-filename /home/cleardigitalmedia/Downl
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
 cd Desktop/Clear_Digital_Media
+
+# Place Custom Scripts onto Desktop
+sudo chmod +x desktop_custom_scripts.sh
+  ./desktop_custom_scripts.sh
+
+# Run Finish Script to Cacel out Guest Login & copy in Logrotate
 sudo ./finish_script_mate.sh
+
 cd ~
 
 #Done
