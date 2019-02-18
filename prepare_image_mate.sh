@@ -92,10 +92,9 @@ cd /tmp
 
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/bsplayer-13_0_0-2-amd64.deb
 
-cd ~
-
 sudo dpkg -i bsplayer-13_0_0-2-amd64.deb
 
+cd ~
 # sudo sh -c 'echo "deb http://portal.broadsign.com/deb stable main" >> /etc/apt/sources.list.d/broadsign.list'
 # sudo sh -c 'echo "deb http://portal.broadsign.com/deb preview main" >> /etc/apt/sources.list.d/broadsign.list'
 
