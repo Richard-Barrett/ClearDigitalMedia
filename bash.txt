@@ -18,7 +18,7 @@
 # Variable Assignment for Inet and Broadsign Loop
 # ===============================================
 # inet_state='ip addr show | awk '{print $8,$9}' | awk 'NR >= 7 && NR <=7''
-inet_state=`fping 8.8.8.8`
+inet_state=`sleep 10 && fping 8.8.8.8`
 
 # =======================================
 # Alias Commands for Broadsign & Crontabs
