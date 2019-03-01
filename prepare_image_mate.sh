@@ -1,7 +1,8 @@
 #!/bin/bash
-# Created by: Richard Barrett & Chip Martin
+# Created by: Richard Barrett
 # Date: 11/13/2018
-# Version 1.0
+# Version 1.9
+# ============================
 
 # Docuementation for script
 # ==========================
@@ -35,6 +36,10 @@ sudo apt-get -f install expect -y
 sudo apt-get -f install openssh-server openssh-client -y
 sudo apt-get install openvpn -y
 sudo apt-get -f install curl -y
+sudo apt-get -f install fping -y
+sudo apt-get -f install iperf -y
+sudo apt-get -f install kazam -y
+sudo apt-get -f install iftop -y
 sudo apt-get -f install traceroute -y
 sudo apt-get install hal -y
 sudo apt-get -f install sysstat -y
@@ -42,15 +47,15 @@ sudo apt-get -f install wget -y
 sudo apt-get -f install vim -y
 sudo apt-get -f install synaptic -y
 sudo add-apt-repository ppa:appgrid/stable -y
-sudo apt-get update -y
 sudo apt-get -f install appgrid -y
 sudo add-apt-repository ppa:alessandro-strada/ppa -y
 sudo apt-get update
 sudo apt-get -f install openvpn -y
-#sudo apt-get install --reinstall network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
-#sudo service network-manager restart
+sudo apt-get install --reinstall network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome
+sudo service network-manager restart
 sudo apt-get install google-drive-ocamlfuse -y
 sudo apt-get -f install xvnc4viewer -y
+sudo apt-get update -y
 
 # Script will Utilize Expect tool to force repo and software updates
 # ==================================================================
@@ -60,14 +65,14 @@ sudo apt-get -f install xvnc4viewer -y
 # Script will make directories
 # ============================
 
-mkdir Clear_Digital_Media 
-  cd Clear_Digital_Media 
+mkdir Cleardigitalmedia 
+  cd Cleardigitalmedia 
     mkdir Apps && mkdir Broadsign && mkdir Services && mkdir Notes
-cd 
+cd ~
 
 
-# Script will curl and download Teamviewer and install into tmp
-# ==============================================================
+# Script will use wget and download Teamviewer and install into tmp
+# =================================================================
 
 cd /tmp && wget https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc
 
@@ -79,24 +84,32 @@ sudo sh -c 'echo "deb http://linux.teamviewer.com/deb preview main" >> /etc/apt/
 sudo apt-get update -y
 sudo apt install teamviewer -y
 
-cd
+cd ~
 
 # Script will curl and install broadsign player under broadsign package
 # =====================================================================
-cd /Clear_Digital_Media/Broadsign/ 
+cd /tmp
 
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/bsplayer-13_0_0-2-amd64.deb
 
-cd 
-
 sudo dpkg -i bsplayer-13_0_0-2-amd64.deb
 
+cd ~
 # sudo sh -c 'echo "deb http://portal.broadsign.com/deb stable main" >> /etc/apt/sources.list.d/broadsign.list'
 # sudo sh -c 'echo "deb http://portal.broadsign.com/deb preview main" >> /etc/apt/sources.list.d/broadsign.list'
 
 # Script will check for dependencies and push new commits
 # =======================================================
 sudo apt-get install -f -y
+
+# Script will download the Image for the CDM Player & Stop Icon Badge in /Downloads/
+# ==================================================================================
+cd Downloads/
+
+wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/CDMIcon_64x64.svg
+wget https://s3-us-west-2.amazonaws.com/cdmftp/Cleardigitalmedia+NetVision/Icons/Stop_it.png
+
+cd ~
 
 
 # Script will move all of the necessary applications onto the desktop 
@@ -130,6 +143,28 @@ sudo chmod 777 ~/Desktop/nautilus.desktop
 sudo cp /usr/share/applications/mate-settings-properties.desktop ~/Desktop
 sudo chmod 777 ~/Desktop/mate-settings-properties.desktop
 
+# Script will prepare the desktop with two script icons to start/stop player
+# ==========================================================================
+cd Destop/Clear_Digital_Media/
+
+sudo ./desktop_custom_scripts.sh
+
+cd ~
+
+# Script will download Unifies Remote Server and append it to the desktop
+# ==================================================================================================
+# URL: https://www.unifiedremote.com/tutorials/how-to-install-unified-remote-server-deb-via-terminal
+
+wget -O urserver.deb http://www.unifiedremote.com/d/linux-x64-deb
+
+sudo dpkg -i urserver.deb -f -y
+
+# Script copies bash.txt. to ~/Documents/
+# =======================================
+cd Desktop/Clear_Digital_Media/
+sudo cp bash.txt ~/Documents/
+cd ~
+
 # Copy the brcmfmac43455-sdio.txt Wifi driver into /lib/firmware/brcm
 # ====================================================================
 
@@ -149,21 +184,32 @@ cd ~
 # Script will change the contents of the Bash Profile to match Bash\ Profile
 # ==========================================================================
 cd Desktop/Clear_Digital_Media
-mv Bash\ Profile ~/.bashrc
+cp Bash\ Profile ~/.bashrc
 cd ~
 
 # Script Downloads error wallpaper image for mediaplayer and sets it as desktop background
 # ========================================================================================
+cd Downloads/
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen-01.jpg
 wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen_11-14-18.jpg
+wget https://s3-us-west-2.amazonaws.com/cdmftp/Public/Documents/HNN_ErrorScreen_12-27-18.jpg
+cd ~
 
 # Example: gsettings set org.mate.background picture-filename /home/test/Pictures/2.jpg
-gsettings set org.mate.background picture-filename /home/cleardigitalmedia/HNN_ErrorScreen_11-14-18.jpg
+gsettings set org.mate.background picture-filename /home/cleardigitalmedia/Downloads/HNN_ErrorScreen_12-27-18.jpg
 
 # Copy finish_script.sh into root directory & initialize finish_script.sh
 # ========================================================================
 cd Desktop/Clear_Digital_Media
-sudo /home/cleardigitalmedia/Desktop/Clear_Digital_Media/finish_script_mate.sh
+
+# Place Custom Scripts onto Desktop
+sudo chmod +x desktop_custom_scripts.sh
+  ./desktop_custom_scripts.sh
+
+# Run Finish Script to Cacel out Guest Login & copy in Logrotate
+sudo ./finish_script_mate.sh
+
 cd ~
 
 #Done
+#END

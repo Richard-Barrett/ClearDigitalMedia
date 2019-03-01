@@ -1,0 +1,19 @@
+#!/bin/bash
+# Created by Richard Barrett
+# Date 01/20/2019
+# Version 1.1
+
+# Script will initiate Broadsign Services on the CDM Player
+# =========================================================
+cd ~/Documents/
+	cp bash.txt ~/.bashrc
+	
+cd ~
+
+source .bashrc 
+	sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh
+
+# Player should start
+# ~/.bashrc should be fixed with alias command uncommented
+
+#END

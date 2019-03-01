@@ -1,0 +1,14 @@
+#!/bin/bash
+# Created by Richard Barrett
+# Date 01/20/2019
+# Version 1.1
+
+# Script restores bash 
+# ====================
+/bin/cp /etc/skel/.bashrc ~/
+	cd ~
+source .bashrc && reboot
+
+# Player should stop playing
+# ~/.bashrc is restored to skeleton
+# END

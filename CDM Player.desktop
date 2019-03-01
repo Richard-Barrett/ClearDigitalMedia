@@ -1,0 +1,12 @@
+[Desktop entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Categories=Utility;Application;
+
+Name=CDM Player
+Comment=Open CDM Player
+Exec=sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh
+
+Icon=/home/cleardigitalmedia/CDMIcon_64x64.svg
+X-GNOME-Autostart-enabled=true
