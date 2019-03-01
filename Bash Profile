@@ -24,7 +24,7 @@ inet_state=`sleep 10 && fping 8.8.8.8`
 # Alias Commands for Broadsign & Crontabs
 # =======================================
 alias broadsign='cd /opt/broadsign/suite/bsp/bin/ && sudo /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh'
-
+broadsign
 
 # NOTE**: 
 # Step 1. To activate Broadsign Service you have to comment out the uncommented alias above by using "wq!" for vim!!!
@@ -46,7 +46,7 @@ inet_state_bad="8.8.8.8 is unreachable"
 # ==============================================
 # Loop for Internet Connection & Start Broadsign
 # ==============================================
-while true; do
+#while true; do
         if [[ "${inet_state}" = "${inet_state_good}" ]];
                 then sleep 10 && /opt/broadsign/suite/bsp/bin/start_bsp_undedicated.sh && break
         elif [[ "${inet_state}" = "${inet_state_bad}" ]];
