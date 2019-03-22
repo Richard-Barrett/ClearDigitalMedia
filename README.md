@@ -1,6 +1,6 @@
 # Clear_Digital_Media
 # This Repository is for all projects for Clear Digital Media
-# Created by Richard Barrett & Chip Martin
+# Created by Richard Barrett
 # Date: 10/25/2018 && Version: 1.0
 # ============================================================
 
